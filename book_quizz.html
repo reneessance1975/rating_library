@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #FF33D9;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .question h2 {
+            font-size: 1.2rem;
+        }
+
+        .options {
+            margin-top: 10px;
+        }
+
+        .options label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #FF33D9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background-color: #FF33D9;
+        }
+
+        .result {
+            margin-top: 30px;
+            font-size: 1.2rem;
+        }
+
+        .result span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Book Quiz: Test Your Literary Knowledge!</h1>
+    </header>
+
+    <main>
+        <div id="quiz">
+            <div class="question" id="question1">
+                <h2>1. Who wrote the book "1984"?</h2>
+                <div class="options">
+                    <input type="radio" id="q1a1" name="q1" value="George Orwell">
+                    <label for="q1a1">George Orwell</label>
+                    <input type="radio" id="q1a2" name="q1" value="Aldous Huxley">
+                    <label for="q1a2">Aldous Huxley</label>
+                    <input type="radio" id="q1a3" name="q1" value="J.K. Rowling">
+                    <label for="q1a3">J.K. Rowling</label>
+                </div>
+            </div>
+
+            <div class="question" id="question2">
+                <h2>2. What is the title of the first book in the Harry Potter series?</h2>
+                <div class="options">
+                    <input type="radio" id="q2a1" name="q2" value="Harry Potter and the Philosopher's Stone">
+                    <label for="q2a1">Harry Potter and the Philosopher's Stone</label>
+                    <input type="radio" id="q2a2" name="q2" value="Harry Potter and the Chamber of Secrets">
+                    <label for="q2a2">Harry Potter and the Chamber of Secrets</label>
+                    <input type="radio" id="q2a3" name="q2" value="Harry Potter and the Prisoner of Azkaban">
+                    <label for="q2a3">Harry Potter and the Prisoner of Azkaban</label>
+                </div>
+            </div>
+
+            <div class="question" id="question3">
+                <h2>3. Who is the author of "Pride and Prejudice"?</h2>
+                <div class="options">
+                    <input type="radio" id="q3a1" name="q3" value="Jane Austen">
+                    <label for="q3a1">Jane Austen</label>
+                    <input type="radio" id="q3a2" name="q3" value="Charlotte Brontë">
+                    <label for="q3a2">Charlotte Brontë</label>
+                    <input type="radio" id="q3a3" name="q3" value="Emily Dickinson">
+                    <label for="q3a3">Emily Dickinson</label>
+                </div>
+            </div>
+
+            <button onclick="checkAnswers()">Submit Quiz</button>
+            <div id="result" class="result"></div>
+        </div>
+    </main>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+
+            // Question 1
+            if (document.getElementById("q1a1").checked) {
+                score++;
+            }
+
+            // Question 2
+            if (document.getElementById("q2a1").checked) {
+                score++;
+            }
+
+            // Question 3
+            if (document.getElementById("q3a1").checked) {
+                score++;
+            }
+
+            // Show result
+            const resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = `You got <span>${score}</span> out of 3 questions correct!`;
+        }
+    </script>
+</body>
+</html>

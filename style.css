@@ -1,0 +1,91 @@
+
+:root {
+    --primary-color: #CD76FF;
+    --secondary-color: #4CAF50;
+    --hover-color: #45a049;
+    --background-color: #f4f4f9;
+    --text-color: #333;
+    --button-padding: 10px 20px;
+    --font-size: 16px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(to right, #CD76FF, #9c4eeb);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos do botão */
+button {
+    padding: var(--button-padding);
+    font-size: var(--font-size);
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(1);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.6);
+}
+
+/* Container geral do conteúdo */
+main {
+    text-align: center;
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+/* Container do Quiz */
+#quiz-container {
+    text-align: center;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Estilo para dispositivos móveis */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    header {
+        padding: 15px 0;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    #quiz-container {
+        margin-top

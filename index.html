@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rating Library</title>
+    <style>
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #FF33D9;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        nav {
+            background-color: #2d3436;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 40px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #FF33D9;
+        }
+
+        .book-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .book-card {
+            background-color: #f0f0f0;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            width: calc(33% - 20px);
+            box-sizing: border-box;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        
+        .book-card img {
+            max-width: 120px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .review-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .review-card {
+            background-color: #f9f9f9;
+            margin: 10px 0;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        
+        .review-card img {
+            width: 90px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+
+        .matchmaking {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .matchmaking h2 {
+            color: #6c5ce7;
+        }
+
+        .matchmaking button {
+            padding: 12px 25px;
+            background-color: #6c5ce7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .matchmaking button:hover {
+            background-color: #FF33D9;
+        }
+
+        .matchmaking .match-result {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #2d3436;
+        }
+
+        .review-form input,
+        .review-form textarea,
+        .review-form button {
+            padding: 10px;
+            font-size: 1rem;
+            width: 100%;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .review-form button {
+            background-color: #6c5ce7;
+            color: white;
+            cursor: pointer;
+        }
+
+        .review-form button:hover {
+            background-color: #4a3bad;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2d3436;
+            color: white;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1> ❃ Book Rating Library ❃ </h1>
+        <p>Welcome to your online book rating library! Here you can share your thoughts on your newest reads and share your ratings with the world!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#add-review">Add New Review</a></li>
+            <li><a href="story_generator.html">✩₊˚.⋆☾⋆⁺₊✧ GENERATE BOOK IDEAS! ✩₊˚.⋆☾⋆⁺₊✧</a></li>
+            <li><a href="book_quizz.html">*ੈ✩‧₊˚BOOK QUIZZ *ੈ✩‧₊˚</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h2>POPULAR AT THE MOMENT</h2>
+        <div class="book-list">
+            <div class="book-card">
+                <img src="ywgttn_danhowell.jpg" alt="You Will Get Through This Night">
+                <h3>"You Will Get Through This Night"</h3>
+                <p>Author: Daniel Howell</p>
+                <p>Rating: ★★★★☆</p>
+            </div>
+            <div class="book-card">
+                <img src="1984.jpg" alt="1984">
+                <h3>"1984"</h3>
+                <p>Author: George Orwell</p>
+                <p>Rating: ★★★☆☆</p>
+            </div>
+            <div class="book-card">
+                <img src="tpobaw.jpg" alt="The Princess Bride">
+                <h3>"The Perks of Being a Wallflower"</h3>
+                <p>Author: Stephen Chbosky</p>
+                <p>Rating: ★★★★★</p>
+            </div>
+            <div class="book-card">
+                <img src="solitaire.jpg" alt="Solitaire">
+                <h3>"Solitaire"</h3>
+                <p>Author: Alice Oseman</p>
+                <p>Rating: ★★★★☆</p>
+            </div>
+            <div class="book-card">
+                <img src="tgib.jpg" alt="The Great Gatsby">
+                <h3>"The Girls I've Been"</h3>
+                <p>Author: Tess Sharpe</p>
+                <p>Rating: ★★★★☆</p>
+            </div>
+            <div class="book-card">
+                <img src="totp.jpg" alt="The One True Pairing">
+                <h3>"Tales of The Peculiar"</h3>
+                <p>Author: Ransom Riggs</p>
+                <p>Rating: ★★★☆☆</p>
+            </div>
+            <div class="book-card">
+                <img src="ols.jpg" alt="One Last Stop">
+                <h3>"One Last Stop"</h3>
+                <p>Author: Casey McQuinston</p>
+                <p>Rating: ★★★★★</p>
+            </div>
+            <div class="book-card">
+                <img src="rwarb.jpg" alt="Red, White, and Royal Blue">
+                <h3>"Red, White, and Royal Blue"</h3>
+                <p>Author: Casey McQuinston</p>
+                <p>Rating: ★★★★★</p>
+            </div>
+            <div class="book-card">
+                <img src="bpar.jpg" alt="Becoming Princess Arabella">
+                <h3>"Between Perfect and Real"</h3>
+                <p>Author: Ray Stoeve</p>
+                <p>Rating: ★★★☆☆</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews">
+        <h2>LATEST REVIEWS FROM USERS</h2>
+<div class="review-list">
+    <div class="review-card">
+        <img src="ols.jpg" alt="One Last Stop" class="review-img">
+        <h3>"One Last Stop"</h3>
+        <p><strong>Author:</strong>Casey McQuinston</p>
+        <p>Great read! Loved the plot, hooked until the end. A must-read for romance fans!</p>
+        <p class="rating">Avaliação: ★★★★★</p>
+    <div class="review-card">
+    <img src="totp.jpg" alt="Tales of The Peculiar" class="review-img">
+    <h3>"Tales of The Peculiar"</h3>
+    <p><strong>Author:</strong> Ransom Riggs</p>
+    <p>Started off pretty slow but got better with time!</p>
+    <p class="rating">Avaliação: ★★★☆☆</p>
+   
+            </div>
+        </div>
+    </section> <section id="matchmaking">
+        <!-- Colar o código do matchmaking aqui -->
+    </section><!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book Matchmaking</title>
+        <style>
+            /* Estilo para a seção de matchmaking */
+            .matchmaking {
+                margin-top: 40px;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+    
+            .matchmaking h2 {
+                color: #6c5ce7;
+            }
+    
+            .matchmaking button {
+                padding: 12px 25px;
+                background-color: #6c5ce7;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 1.2rem;
+            }
+    
+            .matchmaking button:hover {
+                background-color: #4a3bad;
+            }
+    
+            .matchmaking .match-result {
+                font-size: 1.2rem;
+                margin-top: 20px;
+                font-weight: bold;
+                color: #2d3436;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="matchmaking">
+            <h2>Your Book Match!</h2>
+            <button onclick="generateMatch()">Generate Match</button>
+            <div id="matchResult" class="match-result">
+                <!-- O resultado do matchmaking será exibido aqui -->
+            </div>
+        </div>
+    
+        <script>
+            // Lista de livros e personagens para gerar o "match"
+            const matches = [
+                { name: "The Hobbit", type: "Book", description: "A fantasy novel by J.R.R. Tolkien about a hobbit's journey to help reclaim a kingdom." },
+                { name: "Sherlock Holmes", type: "Character", description: "The famous detective from the novels by Arthur Conan Doyle. A master of logic and deduction." },
+                { name: "Harry Potter", type: "Book", description: "The first book in the 'Harry Potter' series by J.K. Rowling, filled with magic, friendship, and adventure." },
+                { name: "Katniss Everdeen", type: "Character", description: "The protagonist of the 'Hunger Games' series by Suzanne Collins, known for her survival skills." },
+                { name: "1984", type: "Book", description: "A dystopian novel by George Orwell, exploring themes of totalitarianism and surveillance." },
+                { name: "Gandalf", type: "Character", description: "A wizard from J.R.R. Tolkien's 'Lord of the Rings', known for his wisdom and magical powers." },
+                { name: "The Great Gatsby", type: "Book", description: "A novel by F. Scott Fitzgerald about wealth, love, and the American Dream in the 1920s." },
+                { name: "Elizabeth Bennet", type: "Character", description: "The witty and independent heroine from Jane Austen's 'Pride and Prejudice'." }
+            ];
+    
+            // Função para gerar um "match" aleatório
+            function generateMatch() {
+                // Escolher um item aleatório da lista "matches"
+                const randomMatch = matches[Math.floor(Math.random() * matches.length)];
+    
+                // Exibir o resultado na página
+                const matchResultDiv = document.getElementById("matchResult");
+                matchResultDiv.innerHTML = `<p><strong>Your Match: </strong>${randomMatch.name}</p><p><em>Type: ${randomMatch.type}</em></p><p>${randomMatch.description}</p>`;
+            }
+        </script>
+    </body>
+    </html>
+    
+    
+    
+   
+
+    <section id="add-review">
+        <h2>Add Your Review:</h2>
+        <form id="review-form">
+            <label for="book-title">Book Title:</label>
+            <input type="text" id="book-title" name="book-title" required>
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required>
+
+            <label for="rating">Rating (1 to 5):</label>
+            <input type="number" id="rating" name="rating" min="1" max="5" required>
+
+            <label for="review-text">Review:</label>
+            <textarea id="review-text" name="review-text" rows="4" required></textarea>
+
+            <button type="submit">Send Review</button>
+        </form>
+    </section>
+
+    <section id="isbn-search">
+        <h2>Search Book ISBN:</h2>
+        <form id="isbn-form">
+            <label for="isbn">Book ISBN:</label>
+            <input type="text" id="isbn" name="isbn" required>
+            <button type="submit">Search Book</button>
+        </form>
+        <section id="gif-section">
+            <div class="gif-container">
+                <img src="book.gif" alt="Descrição do GIF" class="gif">
+                <img src="cat.gif" alt="Descrição do GIF" class="gif" width="300" height="auto">
+                <img src="pusheen.gif" alt="Descrição do GIF" class="gif" width="300" height="auto">
+                <img src="bat.gif" alt="Descrição do GIF" class="gif" width="300" height="auto">
+
+            </div>
+        </section>
+        

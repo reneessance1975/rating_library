@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ideas for your own book - Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #f033ff;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+        }
+        main {
+            max-width: 600px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        #story {
+            font-size: 1.2rem;
+            margin: 20px 0;
+            color: #2d3436;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #f033ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        button:hover {
+            background-color: #f033ff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1> ✩₊˚.⋆☾⋆⁺₊✧ GENERATE BOOK IDEAS! ✩₊˚.⋆☾⋆⁺₊✧</h1>
+        <p>Click the button below to generate your next masterpiece :)</p>
+    </header>
+    <main>
+        <div id="story">Your story will appear here...</div>
+        <button onclick="generateStory()">Generate Story</button>
+    </main>
+
+    <script>
+        const storyParts = {
+            characters: [
+                "an astronaut lost in space",
+                "a curious detective",
+                "a robot with feelings",
+                "a friendly dragon",
+                "a powerful sorceress",
+                "a confused pirate"
+            ],
+            settings: [
+                "in a distant galaxy",
+                "in a haunted castle",
+                "on a sunken ship",
+                "in a magical forest",
+                "in a futuristic city",
+                "in an endless desert"
+            ],
+            plots: [
+                "discovers an ancient secret",
+                "searches for hidden treasure",
+                "gets lost in an unexpected adventure",
+                "finds an unexpected new friend",
+                "saves the world from great danger",
+                "solves an intriguing mystery"
+            ]
+        };
+
+        function generateStory() {
+            const character = storyParts.characters[Math.floor(Math.random() * storyParts.characters.length)];
+            const setting = storyParts.settings[Math.floor(Math.random() * storyParts.settings.length)];
+            const plot = storyParts.plots[Math.floor(Math.random() * storyParts.plots.length)];
+            const story = `Once upon a time, there was ${character}, who was ${setting} and ${plot}.`;
+            document.getElementById("story").textContent = story;
+        }
+    </script>
+</body>
+</html>
